@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process-definition  name="test2">
+
+
+	<start-state name="start-state1">
+		<transition to="Envoi document"></transition>
+	</start-state>
+
+
+	<node name="Réception SFD">
+		<transition to="Accusé de réception"></transition>
+	</node>
+
+	<task-node name="Envoi document">
+		<transition to="Réception SFD"></transition>
+	</task-node>
+
+	<mail-node name="Accusé de réception">
+		<transition to="end-state1"></transition>
+	</mail-node>
+
+
+	<end-state name="end-state1"></end-state>
+
+
+</process-definition>
